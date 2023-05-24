@@ -214,7 +214,7 @@ async function PDF(data) {
   // or a .pdf file
   await page.pdf({
     format: 'A4',
-    path: './public/pdf/ticket.pdf'
+    path: `${__dirname}/public/pdf/ticket.pdf`
   })
 
   // close the browser
