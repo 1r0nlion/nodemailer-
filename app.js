@@ -296,6 +296,9 @@ async function main(data) {
     console.log(`Nodemail app listening on port ${port}`)
   })    
   
+  // Serve static files from the 'public' folder
+  app.use(express.static('public'));
+
   // Parse JSON request bodies
   app.use(express.json()); 
   
