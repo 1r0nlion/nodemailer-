@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const accountTransport = require("./account_transport.json");
-const imageLogo = path.resolve("file:///", __dirname, "./public/img/logo2.png")
+const imageLogo = path.resolve("file://", __dirname, "/public/img/logo2.png")
 console.log("🚀 ~ file: app.js:13 ~ imageLogo:", imageLogo)
 
 
