@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const accountTransport = require("./account_transport.json");
-const imageLogo = path.resolve("file://", __dirname, "/public/img/logo2.png")
+const imageLogo = path.resolve("file:///opt/render/project/src/public/img/logo2.png")
 console.log("🚀 ~ file: app.js:13 ~ imageLogo:", imageLogo)
 
 
@@ -57,7 +57,11 @@ async function PDF(data) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  </style>
     <h1>Comprobante de pago</h1>
     <h4>${data.id}</h4>
     <div>
