@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const accountTransport = require("./account_transport.json");
-const imageLogo = path.resolve("file:///opt/render/project/src/public/img/logo2.png")
+const imageLogo = path.resolve("file:///public/img/logo2.png")
 console.log("🚀 ~ file: app.js:13 ~ imageLogo:", imageLogo)
 
 
@@ -40,7 +40,7 @@ async function PDF(data) {
     margin: {
       top: '15mm',
       bottom: '15mm',
-      left: '20mm',
+      left: '60mm',
       right: '20mm'
     }
   };
@@ -65,7 +65,7 @@ async function PDF(data) {
     <h1>Comprobante de pago</h1>
     <h4>${data.id}</h4>
     <div>
-      <p class="paragraph-title">Datos de facturación</p>
+      <h3 class="paragraph-title">Datos de facturación</h3>
       <p>${data.name}</p>
       <p>${data.adress}</p>
       <p>${data.city}</p>
@@ -73,7 +73,7 @@ async function PDF(data) {
     </div>
     <br>
     <div>
-      <p class="paragraph-title">Datos de la compra</p>
+      <h3 class="paragraph-title">Datos de la compra</h3>
       <p>ID de transacción: ${data.transaction}</p>
       <p>Medio de pago: ${data.payment}</p>
       <p>Total: ${data.price}</p>
