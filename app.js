@@ -211,11 +211,24 @@ async function PDF(data) {
     waitUntil: 'domcontentloaded'
   })
 
-  // or a .pdf file
-  await page.pdf({
-    format: 'A4',
-    path: `${__dirname}/public/pdf/ticket.pdf`
-  })
+    // create a pdf buffer
+    await page.pdf({
+      format: 'A4'
+    }).then(pdfBuffer => {
+      fs.writeFileSync('./public/pdf/ticket.pdf', pdfBuffer); 
+      console.log("PDF saved successfully!");
+    }).catch(error => {
+      console.error("Error generating PDF:", error);
+    });
+
+
+    
+
+  // // or a .pdf file
+  // await page.pdf({
+  //   format: 'A4',
+  //   path: `${__dirname}/public/pdf/ticket.pdf`
+  // })
 
   // close the browser
   await browser.close()
