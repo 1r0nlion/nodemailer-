@@ -9,9 +9,6 @@ const fs = require('fs');
 const path = require('path');
 
 const accountTransport = require("./account_transport.json");
-const imageLogo = path.resolve("https://static.wixstatic.com/media/26c657_ffcf772b2a1f4b3ea95f86ba1dca6e8c~mv2.png/v1/crop/x_10,y_1,w_1262,h_509/fill/w_288,h_116,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20ATIO%20Int%20H.png")
-console.log("🚀 ~ file: app.js:13 ~ imageLogo:", imageLogo)
-
 
 const OAuth = () => {
     const oauth2Client = new OAuth2(
@@ -78,7 +75,6 @@ async function PDF(data) {
       <p>Medio de pago: ${data.payment}</p>
       <p>Total: ${data.price}</p>
     </div>
-    <img style="margin-top: 20px;" src= "${imageLogo}"/>
   </body>
   </html>` };
 
@@ -133,7 +129,7 @@ async function main(data) {
           <p>Medio de pago: ${data.payment}</p>
           <p>Total: ${data.price}</p>
         </div>
-        <img style="margin-top: 20px;" src="cid:logo"/>
+        <img style="margin-top: 30px; margin-bottom: 30px; margin-left: 10px;" src="cid:logo"/>
       </body>
       </html>`,
       attachments: [{
