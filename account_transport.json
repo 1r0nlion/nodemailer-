@@ -1,0 +1,12 @@
+{
+    "service": "gmail",
+    "auth": {
+      "type": "OAuth2",
+      "user": "leonardo.bana89@gmail.com",
+      "clientId": "828114093021-eiv69gf617238b4usa5dvftk839ska86.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04WE99LzYMoQnCgYIARAAGAQSNwF-L9IrB4dKKRO-r5rkUGK-mDeAZbUl0Jsil1-RrYLOo9GtkyPCBDEEPdSi_XXDY24hSd7YuTI",
+      "password": "lzdkfrhowdabpczr"
+    }
+  }
+
