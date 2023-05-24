@@ -2,7 +2,6 @@ FROM node:16.17.0
 
 
 WORKDIR /usr/src/app
-COPY ..
 
 CMD ["npm", "run", "start"]
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
