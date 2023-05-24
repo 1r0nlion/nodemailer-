@@ -7,6 +7,7 @@ const OAuth2 = google.auth.OAuth2;
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
+require("dotenv").config
 
 const accountTransport = require("./account_transport.json");
 
@@ -33,6 +34,15 @@ async function PDF(data) {
 
   // launch a new chrome instance
   const browser = await puppeteer.launch({
+    args: [
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--single-process",
+      "--no-zygote",
+    ],
+    executablePath: process.env.NODE_ENV === "production"
+    ? process.env.PUPPETEER_EXECITABLE_PATH
+    : puppeteer.executablePath(),
     headless: true
   })
 
