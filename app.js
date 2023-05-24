@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const accountTransport = require("./account_transport.json");
-const imageLogo = path.resolve("public/img/logo2.png")
+const imageLogo = path.resolve("https://static.wixstatic.com/media/26c657_ffcf772b2a1f4b3ea95f86ba1dca6e8c~mv2.png/v1/crop/x_10,y_1,w_1262,h_509/fill/w_288,h_116,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20ATIO%20Int%20H.png")
 console.log("🚀 ~ file: app.js:13 ~ imageLogo:", imageLogo)
 
 
@@ -59,7 +59,7 @@ async function PDF(data) {
   </head>
   <style>
   body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
   </style>
     <h1>Comprobante de pago</h1>
