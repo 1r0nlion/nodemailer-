@@ -13,7 +13,8 @@ require("dotenv").config
 const accountTransport = require("./account_transport.json");
 
 const filePath = '/usr/src/app/public/img/logo2.png';
-const img = fs.readFileSync(`${process.cwd()}/public/img/logo2.png`).toString('base64');
+const base64Image = fs.readFileSync(`${process.cwd()}/public/img/logo2.png`).toString('base64');
+const dataURI = `data:image/png;base64,${base64Image}`;
 const date = moment().format('MMMM Do YYYY');
 console.log("🚀 ~ file: app.js:18 ~ img:", img)
 
@@ -152,7 +153,7 @@ async function PDF(data) {
               <table>
                 <tr>
                   <td class="title">
-                    <img src="data:image/png;base64,BINARY_CHUNKS" style="width: 100%; max-width: 300px"  class="logo">
+                    <img src="${dataURI}" style="width: 100%; max-width: 300px"  class="logo">
                   </td>
                   <td>
                     Invoice ${data.id}<br /><br />
