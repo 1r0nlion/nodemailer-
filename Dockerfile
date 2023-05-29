@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-RUN chown root:bind  /usr/src/app/public/pdf; chmod g+rwx  /usr/src/app/public/pdf
+RUN su - /usr/src/app/public/pdf; chmod +r /usr/src/app/public/pdf
 
 CMD ["node", "app.js"]
 
