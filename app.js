@@ -20,8 +20,6 @@ const date = moment().format('MMMM Do YYYY');
 
 
 
-
-
 const OAuth = () => {
     const oauth2Client = new OAuth2(
         accountTransport.auth.clientId,
@@ -160,7 +158,7 @@ async function PDF(data) {
                   </td>
                   <td>
                     Invoice ${data.id}<br /><br />
-                    Created: ${date}<br />
+                    Fecha: ${date}<br />
                   </td>
                 </tr>
               </table>
@@ -195,7 +193,7 @@ async function PDF(data) {
           </tr>
           <tr class="heading">
             <td>Item</td>
-            <td>Price</td>
+            <td>Precio</td>
           </tr>
           <tr class="item">
             <td>Item 1</td>
