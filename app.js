@@ -12,7 +12,7 @@ require("dotenv").config
 
 const accountTransport = require("./account_transport.json");
 
-const filePath = path.resolve(__dirname, 'public/img/logo2.png');
+const filePath = '/usr/src/app/public/img/logo2.png';
 const date = moment().format('MMMM Do YYYY');
 console.log("🚀 ~ file: app.js:17 ~ filePath:", filePath)
 

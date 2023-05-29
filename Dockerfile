@@ -9,16 +9,11 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
+USER root
 
 # Copy the file/directory into the container
 COPY public /usr/src/app/public/
-# Copy the image file into the container
-COPY ./public/img/logo2.png /usr/src/app/public/img/logo2.png
 
-USER root
-# Change ownership and permissions of the copied image file
-RUN chown root:root /usr/src/app/public/img/logo2.png \
-    && chmod 644 /usr/src/app/public/img/logo2.png
 # Change ownership and permissions
 RUN chown -R root:root /usr/src/app/public/ \
     && chmod +r /usr/src/app/public/
