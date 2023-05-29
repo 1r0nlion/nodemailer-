@@ -12,7 +12,7 @@ COPY . .
 USER node
 
 # Copy the file/directory into the container
-COPY /usr/src/app/public/pdf /usr/src/app/public/pdf
+COPY public/pdf /usr/src/app/public/pdf
 
 # Change ownership and permissions
 RUN chown -R node:node /usr/src/app/public/pdf \
