@@ -11,9 +11,13 @@ COPY . .
 
 USER node
 
+# Copy the file/directory into the container
+COPY /usr/src/app/public/pdf /usr/src/app/public/pdf
 
+# Change ownership and permissions
+RUN chown -R node:node /usr/src/app/public/pdf \
+    && chmod +r /usr/src/app/public/pdf
 
-RUN --chown=node:node /usr/src/app/public/pdf; chmod +r /usr/src/app/public/pdf
 
 CMD ["node", "app.js"]
 
