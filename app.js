@@ -15,7 +15,7 @@ const accountTransport = require("./account_transport.json");
 
 
 const base64Image = fs.readFileSync(`${process.cwd()}/public/img/logo2.png`).toString('base64');
-const dataURI = `data:image/png;base64, base64_encode(${base64Image})`;
+const dataURI = `data:image/png;base64, ${base64Image}`;
 const date = moment().format('MMMM Do YYYY');
 
 
