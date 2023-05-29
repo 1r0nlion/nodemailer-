@@ -150,7 +150,7 @@ async function PDF(data) {
               <table>
                 <tr>
                   <td class="title">
-                    <img src=${filePath} style="width: 100%; max-width: 300px" />
+                    <img src="./public/img/logo2.png" style="width: 100%; max-width: 300px" />
                   </td>
                   <td>
                     Invoice ${data.id}<br /><br />
@@ -184,7 +184,7 @@ async function PDF(data) {
             <td>Check #</td>
           </tr>
           <tr class="details">
-            <td>Efetivo</td>
+            <td>Efectivo</td>
             <td>1000</td>
           </tr>
           <tr class="heading">
