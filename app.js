@@ -10,13 +10,16 @@ const moment = require('moment');
 const puppeteer = require('puppeteer');
 require("dotenv").config
 
+
 const accountTransport = require("./account_transport.json");
 
-const filePath = '/usr/src/app/public/img/logo2.png';
+
 const base64Image = fs.readFileSync(`${process.cwd()}/public/img/logo2.png`).toString('base64');
-const dataURI = `data:image/png;base64,${base64Image}`;
+const dataURI = `data:image/png;base64, + base64_encode(${base64Image})`;
 const date = moment().format('MMMM Do YYYY');
-console.log("🚀 ~ file: app.js:18 ~ img:", img)
+
+
+
 
 
 const OAuth = () => {
