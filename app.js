@@ -46,7 +46,7 @@ async function PDF(data) {
       "--no-zygote",
     ],
     executablePath: process.env.NODE_ENV === "production"
-    ? process.env.PUPPETEER_EXECITABLE_PATH
+    ? process.env.PUPPETEER_EXECUTABLE_PATH
     : puppeteer.executablePath(),
     headless: true
   })
