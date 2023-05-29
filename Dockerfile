@@ -15,7 +15,7 @@ COPY public /usr/src/app/public/
 
 USER root
 # Change ownership and permissions
-RUN chown -R node:node /usr/src/app/public/ \
+RUN chown -R root:root /usr/src/app/public/ \
     && chmod +r /usr/src/app/public/
 
 

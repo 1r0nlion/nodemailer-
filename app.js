@@ -6,10 +6,14 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 const puppeteer = require('puppeteer');
 require("dotenv").config
 
 const accountTransport = require("./account_transport.json");
+
+const filePath = "/public/img/logo2.png"
+const date = moment().format('MMMM Do YYYY');
 
 const OAuth = () => {
     const oauth2Client = new OAuth2(
@@ -145,11 +149,11 @@ async function PDF(data) {
               <table>
                 <tr>
                   <td class="title">
-                    <img src="https://static.wixstatic.com/media/26c657_ffcf772b2a1f4b3ea95f86ba1dca6e8c~mv2.png/v1/crop/x_10,y_1,w_1262,h_509/fill/w_260,h_104,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20ATIO%20Int%20H.png" style="width: 100%; max-width: 300px" />
+                    <img src=${filePath} style="width: 100%; max-width: 300px" />
                   </td>
                   <td>
-                    Invoice #:${data.id}<br /><br />
-                    Created: January 1, 2015<br />
+                    Invoice ${data.id}<br /><br />
+                    Created: ${date}<br />
                     Due: February 1, 2015
                   </td>
                 </tr>
@@ -163,7 +167,7 @@ async function PDF(data) {
                   <td>
                    ATIO Inc.<br />
                     Chacabuco 661<br />
-                    Sunnyville, CA 12345
+                    San Isidro, CP 1642
                   </td>
                   <td>
                     ${data.name}<br />
@@ -176,11 +180,11 @@ async function PDF(data) {
             </td>
           </tr>
           <tr class="heading">
-            <td>Payment Method</td>
+            <td>Metodo de pago</td>
             <td>Check #</td>
           </tr>
           <tr class="details">
-            <td>Check</td>
+            <td>Efetivo</td>
             <td>1000</td>
           </tr>
           <tr class="heading">
@@ -188,16 +192,16 @@ async function PDF(data) {
             <td>Price</td>
           </tr>
           <tr class="item">
-            <td>Website design</td>
-            <td>$300.00</td>
+            <td>Item 1</td>
+            <td>$3000.00</td>
           </tr>
           <tr class="item">
-            <td>Hosting (3 months)</td>
-            <td>$75.00</td>
+            <td>Item 2</td>
+            <td>$3000.00</td>
           </tr>
           <tr class="item last">
-            <td>Domain name (1 year)</td>
-            <td>$10.00</td>
+            <td>Item 3</td>
+            <td>$498.00</td>
           </tr>
           <tr class="total">
             <td></td>
