@@ -17,7 +17,7 @@ USER root
 # Change ownership and permissions
 RUN chown -R root:root /usr/src/app/public/ \
     && chmod +r /usr/src/app/public/
-
+    && chmod 644 ./public/img/logo2.png
 
 CMD ["node", "app.js"]
 
