@@ -1,23 +1,13 @@
-FROM node:16
+FROM ghcr.io/puppeteer/puppeteer:20.3.0
 
-# Create app directory
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
 COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
-
-# Bundle app source
+RUN npm ci
 COPY . .
-
-EXPOSE 8080
-CMD [ "node", "server.js" ]
-
-# Run everything after as non-privileged user.
-USER pptruser
+RUN chmod +r /usr/src/app/public/pdf/ticket.pdf
+CMD ["node", "app.js"]
 
