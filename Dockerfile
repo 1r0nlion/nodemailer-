@@ -9,7 +9,11 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-RUN su - /usr/src/app/public/pdf; chmod +r /usr/src/app/public/pdf
+USER node
+
+
+
+RUN --chown=node:node /usr/src/app/public/pdf; chmod +r /usr/src/app/public/pdf
 
 CMD ["node", "app.js"]
 
