@@ -8,6 +8,6 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN chmod +r /usr/src/app/public/pdf/ticket.pdf
+RUN sudo chmod +r /usr/src/app/public/pdf/ticket.pdf
 CMD ["node", "app.js"]
 
