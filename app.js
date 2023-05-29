@@ -13,8 +13,10 @@ require("dotenv").config
 const accountTransport = require("./account_transport.json");
 
 const filePath = '/usr/src/app/public/img/logo2.png';
+const img = fs.readFileSync(`${process.cwd()}\\public/img/logo2.png`).toString('base64');
 const date = moment().format('MMMM Do YYYY');
-console.log("🚀 ~ file: app.js:17 ~ filePath:", filePath)
+console.log("🚀 ~ file: app.js:18 ~ img:", img)
+
 
 const OAuth = () => {
     const oauth2Client = new OAuth2(
@@ -150,7 +152,7 @@ async function PDF(data) {
               <table>
                 <tr>
                   <td class="title">
-                    <img src=${filePath} style="width: 100%; max-width: 300px" />
+                    <img src="data:image/png;base64,BINARY_CHUNKS" style="width: 100%; max-width: 300px"  class="logo">
                   </td>
                   <td>
                     Invoice ${data.id}<br /><br />
@@ -215,7 +217,7 @@ async function PDF(data) {
     waitUntil: 'domcontentloaded'
   })
 
-    await page.setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1');
+  
     // create a pdf buffer
     await page.pdf({
       format: 'A4'
