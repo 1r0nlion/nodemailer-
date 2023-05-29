@@ -12,7 +12,7 @@ require("dotenv").config
 
 const accountTransport = require("./account_transport.json");
 
-const filePath = `${__dirname}/public/img/logo2.png`
+const filePath = path.resolve(__dirname, 'public/img/logo2.png');
 const date = moment().format('MMMM Do YYYY');
 console.log("🚀 ~ file: app.js:17 ~ filePath:", filePath)
 
@@ -150,7 +150,7 @@ async function PDF(data) {
               <table>
                 <tr>
                   <td class="title">
-                    <img src="./public/img/logo2.png" style="width: 100%; max-width: 300px" />
+                    <img src=${filePath} style="width: 100%; max-width: 300px" />
                   </td>
                   <td>
                     Invoice ${data.id}<br /><br />
