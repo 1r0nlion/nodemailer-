@@ -9,14 +9,14 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-USER node
 
 # Copy the file/directory into the container
-COPY public/pdf /usr/src/app/public/pdf
+COPY public /usr/src/app/public/
 
+USER root
 # Change ownership and permissions
-RUN chown -R node:node /usr/src/app/public/pdf \
-    && chmod +r /usr/src/app/public/pdf
+RUN chown -R node:node /usr/src/app/public/ \
+    && chmod +r /usr/src/app/public/
 
 
 CMD ["node", "app.js"]
