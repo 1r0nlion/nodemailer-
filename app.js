@@ -12,8 +12,9 @@ require("dotenv").config
 
 const accountTransport = require("./account_transport.json");
 
-const filePath = "/public/img/logo2.png"
+const filePath = `${__dirname}/public/img/logo2.png`
 const date = moment().format('MMMM Do YYYY');
+console.log("🚀 ~ file: app.js:17 ~ filePath:", filePath)
 
 const OAuth = () => {
     const oauth2Client = new OAuth2(
@@ -154,7 +155,6 @@ async function PDF(data) {
                   <td>
                     Invoice ${data.id}<br /><br />
                     Created: ${date}<br />
-                    Due: February 1, 2015
                   </td>
                 </tr>
               </table>
@@ -172,7 +172,7 @@ async function PDF(data) {
                   <td>
                     ${data.name}<br />
                     ${data.adress}<br />
-                    ${data.city}<br />
+                    ${data.city},
                     ${data.cp}<br />
                   </td>
                 </tr>
