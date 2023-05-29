@@ -156,7 +156,7 @@ async function PDF(data) {
               <table>
                 <tr>
                   <td class="title">
-                    <img src="${dataURI}" style="width: 100%; max-width: 300px"  class="logo">
+                    <img src="${dataURI}" style="width: 50% "  class="logo">
                   </td>
                   <td>
                     Invoice ${data.id}<br /><br />
