@@ -13,7 +13,7 @@ require("dotenv").config
 const accountTransport = require("./account_transport.json");
 
 const filePath = '/usr/src/app/public/img/logo2.png';
-const img = fs.readFileSync(`${process.cwd()}\\public/img/logo2.png`).toString('base64');
+const img = fs.readFileSync(`${process.cwd()}/public/img/logo2.png`).toString('base64');
 const date = moment().format('MMMM Do YYYY');
 console.log("🚀 ~ file: app.js:18 ~ img:", img)
 
